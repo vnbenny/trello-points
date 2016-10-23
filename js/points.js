@@ -28,7 +28,7 @@ var cardButton = function(t) {
     }
     console.log(t);
     console.log(t.member());
-    console.log(t.args);
+    console.log(t.args['0'].context.member);
     return [
       {
         icon: ICON,
