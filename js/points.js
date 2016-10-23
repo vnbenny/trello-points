@@ -39,7 +39,7 @@ var cardButton = function(t) {
 var cardButtonCallback = function(t) {
   var points = [NO_POINTS, 1, 2, 3, 4, 5].map(function(point) {
     return {
-      text: 11,
+      text: point+' points',
       callback: function(t) {
           return t.set('card', 'private', 'points', point).then(function() {
               return t.closePopup();
