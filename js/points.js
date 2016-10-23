@@ -17,10 +17,10 @@ var cardBadge = function(t) {
       if(devide < 2){
           var color = 'green';
       }
-      else if(devide >= 2 && devide < 4){
+      else if(devide > 2 && devide < 4){
            var color = 'orange';
       }
-      else if(devide >= 4){
+      else if(devide > 4){
            var color = 'red';
       }
       return [{
