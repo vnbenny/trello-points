@@ -37,13 +37,13 @@ var cardButton = function(t) {
 };
 
 var cardButtonCallback = function(t) {
-  var points = [1, 2, 3, 4, NO_POINTS].map(function(point) {
+  var points = [NO_POINTS, 1, 2, 3, 4, 5].map(function(point) {
     return {
       text: point,
       callback: function(t) {
-        return t.set('card', 'private', 'points', point).then(function() {
-          return t.closePopup();
-        })
+          return t.set('card', 'private', 'points', point).then(function() {
+              return t.closePopup();
+          });
       }
     };
   });
