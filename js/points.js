@@ -1,6 +1,5 @@
 var ICON = './images/logo.png';
 var NO_POINTS = '0';
-var MEMBER = t.args['0'].context.member;
 
 var cardBadge = function(t) {
   return t.get('card', 'shared', 'points').then(function(points) {
@@ -41,8 +40,13 @@ var cardButtonCallback = function(t) {
     return {
       text: point+' points',
       callback: function(t) {
-          return t.set('card', 'private', 'points', point).then(function() {
-              return t.closePopup();
+          var member = t.args['0'].context.member;
+          return t.get('card', 'shared', 'points').then(function(points) {
+              if(String(points)){ points = {}; }
+              points[member] = point;
+              return t.set('card', 'shared', 'points', points).then(function() {
+                  return t.closePopup();
+              });
           });
       }
     };
