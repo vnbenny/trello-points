@@ -1,7 +1,6 @@
 var ICON = './images/logo.png';
 var NO_POINTS = '0';
 
-
 var getRef = function() {
     var name = 'referrer' + "=";
     var ca = document.cookie.split(';');
@@ -14,8 +13,13 @@ var getRef = function() {
             return c.substring(name.length, c.length);
         }
     }
-    return "";
+    return "n/a";
 };
+
+var REFERRER = getRef();
+
+
+
 
 var cardBadge = function(t) {
   return t.get('card', 'private', 'points').then(function(points) {
@@ -45,7 +49,7 @@ var cardButton = function(t) {
     return [
       {
         icon: ICON,
-        text: getRef(),
+        text: REFERRER,
         callback: cardButtonCallback
       }
     ];
