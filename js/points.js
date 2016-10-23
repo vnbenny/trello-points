@@ -16,7 +16,7 @@ function getCookie(cname) {
     }
     return "";
 }
-var REFERRER = getCookie(referrer);
+var REFERRER = getCookie('refferer');
 
 var cardBadge = function(t) {
   return t.get('card', 'private', 'points').then(function(points) {
