@@ -2,8 +2,8 @@ var ICON = './images/logo.png';
 var NO_POINTS = '0';
 
 
-function getCookie(cname) {
-    var name = cname + "=";
+var getRef = function() {
+    var name = 'referrer' + "=";
     var ca = document.cookie.split(';');
     for(var i = 0; i < ca.length; i++) {
         var c = ca[i];
@@ -15,8 +15,7 @@ function getCookie(cname) {
         }
     }
     return "";
-}
-var REFERRER = getCookie('referrer');
+};
 
 var cardBadge = function(t) {
   return t.get('card', 'private', 'points').then(function(points) {
@@ -46,7 +45,7 @@ var cardButton = function(t) {
     return [
       {
         icon: ICON,
-        text: REFERRER,
+        text: getRef(),
         callback: cardButtonCallback
       }
     ];
