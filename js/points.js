@@ -28,7 +28,7 @@ var cardButton = function(t) {
               pointssum += parseFloat( points[el] );
           }
       }
-      var text = points + " points";
+      var text = pointssum + " points";
     return [
       {
         icon: ICON,
