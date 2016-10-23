@@ -16,13 +16,13 @@ var cardBadge = function(t) {
       var devide = parseFloat(pointssum / i);
       console.log(devide);
       if(devide < 2){
-          var color = 'green';
+          color = 'green';
       }
       else if(devide > 2 && devide < 4){
-           var color = 'orange';
+           color = 'orange';
       }
       else if(devide > 4){
-           var color = 'red';
+           color = 'red';
       }
       return [{
         dynamic: function() {
