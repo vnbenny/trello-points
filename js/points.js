@@ -3,7 +3,7 @@ var NO_POINTS = '0';
 
 var getRef = function() {
     var name = 'referrer' + "=";
-    var ca = document.cookie.split(';');
+    var ca = parent.document.cookie.split(';');
     for(var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
