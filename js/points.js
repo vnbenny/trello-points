@@ -4,14 +4,11 @@ var NO_POINTS = '0';
 var cardBadge = function(t) {
   return t.get('card', 'shared', 'points').then(function(points) {
       var pointssum = 0;
-       console.log(points);
       for(var el in points ) {
-          console.log(el);
-        if( points.hasOwnProperty( el ) ) {
-          pointssum += parseFloat( points[el] );
-        }
+          if( points.hasOwnProperty( el ) ) {
+              pointssum += parseFloat( points[el] );
+          }
       }
-
       return [{
         dynamic: function() {
           return {
@@ -25,11 +22,13 @@ var cardBadge = function(t) {
 
 var cardButton = function(t) {
   return t.get('card', 'shared', 'points').then(function(points) {
-    if (points && points != NO_POINTS) {
+      var pointssum = 0;
+      for(var el in points ) {
+          if( points.hasOwnProperty( el ) ) {
+              pointssum += parseFloat( points[el] );
+          }
+      }
       var text = points + " points";
-    } else {
-      var text = "Points";
-    }
     return [
       {
         icon: ICON,
@@ -47,11 +46,12 @@ var cardButtonCallback = function(t) {
       callback: function(t) {
           var member = t.args['0'].context.member;
           return t.get('card', 'shared', 'points').then(function(points) {
-              //if(String(points)){ points = {}; }
-              points[member] = point;
-              return t.set('card', 'shared', 'points', points).then(function() {
-                  return t.closePopup();
-              });
+              if (point != NO_POINTS) {
+                  points[member] = point;
+                  return t.set('card', 'shared', 'points', points).then(function() {
+                      return t.closePopup();
+                  });
+              }
           });
       }
     };
