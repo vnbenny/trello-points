@@ -1,28 +1,9 @@
 var ICON = './images/logo.png';
 var NO_POINTS = '0';
 
-var getRef = function() {
-    var name = 'referrer' + "=";
-    var ca = parent.document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "n/a";
-};
-
-var REFERRER = getRef();
-
-
-
 
 var cardBadge = function(t) {
-  return t.get('card', 'private', 'points').then(function(points) {
+  return t.get('card', 'shared', 'points').then(function(points) {
     if (points && points != NO_POINTS) {
       return [{
         dynamic: function() {
@@ -39,7 +20,7 @@ var cardBadge = function(t) {
 };
 
 var cardButton = function(t) {
-  return t.get('card', 'private', 'points').then(function(points) {
+  return t.get('card', 'shared', 'points').then(function(points) {
     if (points && points != NO_POINTS) {
       var text = points + " points";
     } else {
@@ -49,7 +30,7 @@ var cardButton = function(t) {
     return [
       {
         icon: ICON,
-        text: REFERRER,
+        text: points,
         callback: cardButtonCallback
       }
     ];
