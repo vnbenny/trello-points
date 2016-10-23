@@ -1,6 +1,5 @@
 var ICON = './images/logo.png';
 var ICON_WHITE = './images/logo_white.png';
-var NO_POINTS = '0';
 
 var cardBadge = function(t) {
   return t.get('card', 'shared', 'points').then(function(points) {
@@ -15,7 +14,6 @@ var cardBadge = function(t) {
       var color = '';
       if(pointssum == 0) return [];
       var devide = parseFloat(pointssum / i);
-      console.log(devide);
       if(devide >= 1 && devide < 2){
           color = 'green';
       }
@@ -54,19 +52,16 @@ var cardButton = function(t) {
 };
 
 var cardButtonCallback = function(t) {
-  var points = [NO_POINTS, 1, 2, 3, 4, 5].map(function(point) {
+  var points = [0, 1, 2, 3, 4, 5].map(function(point) {
     return {
       text: point+' points',
       callback: function(t) {
           var member = t.args['0'].context.member;
           return t.get('card', 'shared', 'points').then(function(points) {
-              if (point != NO_POINTS) {
-                  points[member] = point;
-                  return t.set('card', 'shared', 'points', points).then(function() {
-                      return t.closePopup();
-                  });
-              }
-              else return t.closePopup();
+              points[member] = point;
+              return t.set('card', 'shared', 'points', points).then(function() {
+                  return t.closePopup();
+              });
           });
       }
     };
