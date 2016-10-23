@@ -4,8 +4,9 @@ var NO_POINTS = '0';
 var cardBadge = function(t) {
   return t.get('card', 'shared', 'points').then(function(points) {
       var pointssum = 0;
-
+       console.log(points);
       for(var el in points ) {
+          console.log(el);
         if( points.hasOwnProperty( el ) ) {
           pointssum += parseFloat( points[el] );
         }
