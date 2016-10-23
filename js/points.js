@@ -19,13 +19,14 @@ var cardBadge = function(t) {
   });
 };
 
-var cardButton = function(t, e) {
-  return t.get('card', 'shared', 'points').then(function(points) {
+var cardButton = function(t) {
+  return t.get('card', 'shared', 'points').then(function(points, e) {
     if (points && points != NO_POINTS) {
       var text = points + " points";
     } else {
       var text = "Points";
     }
+    console.log(t);
     console.log(e);
     return [
       {
