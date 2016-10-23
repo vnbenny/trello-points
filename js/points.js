@@ -26,11 +26,11 @@ var cardButton = function(t, e) {
     } else {
       var text = "Points";
     }
-
+    console.log(e);
     return [
       {
         icon: ICON,
-        text: e,
+        text: text,
         callback: cardButtonCallback
       }
     ];
