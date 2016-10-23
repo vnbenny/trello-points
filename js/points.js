@@ -1,13 +1,30 @@
 var ICON = './images/logo.png';
 var NO_POINTS = '0';
 
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+var REFERRER = getCookie(referrer);
+
 var cardBadge = function(t) {
   return t.get('card', 'private', 'points').then(function(points) {
     if (points && points != NO_POINTS) {
       return [{
         dynamic: function() {
           return {
-            text: 11,
+            text: points,
             icon: ICON
           }
         }
@@ -29,7 +46,7 @@ var cardButton = function(t) {
     return [
       {
         icon: ICON,
-        text: 22,
+        text: REFERRER,
         callback: cardButtonCallback
       }
     ];
