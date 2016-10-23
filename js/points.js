@@ -39,8 +39,8 @@ var cardButton = function(t) {
      var member = t.args['0'].context.member;
   return t.get('card', 'shared', 'points').then(function(points) {
 
-      if(points[member].length > 0) var pointssum = points[member];
-      else pointssum = 0;
+      if(points[member] !== 'undefined') var pointssum = points[member];
+      else var pointssum = 0;
       var text = pointssum + " points";
     return [
       {
