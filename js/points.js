@@ -9,6 +9,7 @@ var cardBadge = function(t) {
               pointssum += parseFloat( points[el] );
           }
       }
+      if(pointssum == 0) return [];
       return [{
         dynamic: function() {
           return {
