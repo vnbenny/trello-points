@@ -47,7 +47,7 @@ var cardButtonCallback = function(t) {
       callback: function(t) {
           var member = t.args['0'].context.member;
           return t.get('card', 'shared', 'points').then(function(points) {
-              if(String(points)){ points = {}; }
+              //if(String(points)){ points = {}; }
               points[member] = point;
               return t.set('card', 'shared', 'points', points).then(function() {
                   return t.closePopup();
