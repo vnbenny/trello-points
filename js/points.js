@@ -21,10 +21,10 @@ var cardBadge = function(t) {
 };
 
 var cardButton = function(t) {
+     var member = t.args['0'].context.member;
   return t.get('card', 'shared', 'points').then(function(points) {
-      var member = t.args['0'].context.member;
-      if(points[member].length > 0) pointssum = points[member];
-      else pointssum = 0;
+
+      var pointssum = points[member];
       var text = pointssum + " points";
     return [
       {
