@@ -14,7 +14,8 @@ var cardBadge = function(t) {
         dynamic: function() {
           return {
             text: pointssum,
-            icon: ICON
+            icon: ICON,
+            color: 'red'
           }
         }
       }]
