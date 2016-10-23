@@ -66,6 +66,7 @@ var cardButtonCallback = function(t) {
                       return t.closePopup();
                   });
               }
+              else return t.closePopup();
           });
       }
     };
