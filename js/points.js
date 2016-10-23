@@ -11,17 +11,17 @@ var cardBadge = function(t) {
               i++;
           }
       }
-      var color = 'green';
+      var color = '';
       if(pointssum == 0) return [];
       var devide = parseFloat(pointssum / i);
       console.log(devide);
-      if(devide < 2){
+      if(devide >= 1 && devide < 2){
           color = 'green';
       }
-      else if(devide > 2 && devide < 4){
-           color = 'orange';
+      else if(devide >= 2 && devide < 4){
+           color = 'yellow';
       }
-      else if(devide > 4){
+      else if(devide >= 4){
            color = 'red';
       }
       return [{
