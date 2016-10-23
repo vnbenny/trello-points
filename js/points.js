@@ -1,4 +1,5 @@
 var ICON = './images/logo.svg';
+var ICON_WHITE = './images/logo_white.png';
 var NO_POINTS = '0';
 
 var cardBadge = function(t) {
@@ -28,7 +29,7 @@ var cardBadge = function(t) {
         dynamic: function() {
           return {
             text: pointssum,
-            icon: ICON,
+            icon: ICON_WHITE,
             color: color
           }
         }
