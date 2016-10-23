@@ -1,4 +1,4 @@
-var ICON = './images/logo.svg';
+var ICON = './images/logo.png';
 var ICON_WHITE = './images/logo_white.png';
 var NO_POINTS = '0';
 
