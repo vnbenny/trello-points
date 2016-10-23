@@ -1,21 +1,34 @@
-var ICON = './images/logo.png';
+var ICON = './images/logo.svg';
 var NO_POINTS = '0';
 
 var cardBadge = function(t) {
   return t.get('card', 'shared', 'points').then(function(points) {
       var pointssum = 0;
+      var i = 0;
       for(var el in points ) {
           if( points.hasOwnProperty( el ) ) {
               pointssum += parseFloat( points[el] );
+              i++;
           }
       }
+
       if(pointssum == 0) return [];
+      var devide = pointssum / i;
+      if(devide < 2){
+          var color = 'green';
+      }
+      else if(devide >= 2 && devide < 4){
+           var color = 'orange';
+      }
+      else if(devide >= 4){
+           var color = 'red';
+      }
       return [{
         dynamic: function() {
           return {
             text: pointssum,
             icon: ICON,
-            color: 'red'
+            color: color
           }
         }
       }]
