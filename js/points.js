@@ -1,6 +1,6 @@
 var ICON = './images/logo.png';
 var NO_POINTS = '0';
-
+var MEMBER = t.args['0'].context.member;
 
 var cardBadge = function(t) {
   return t.get('card', 'shared', 'points').then(function(points) {
@@ -26,9 +26,6 @@ var cardButton = function(t) {
     } else {
       var text = "Points";
     }
-    console.log(t);
-    console.log(t.member());
-    console.log(t.args['0'].context.member);
     return [
       {
         icon: ICON,
