@@ -14,6 +14,7 @@ var cardBadge = function(t) {
       var color = 'green';
       if(pointssum == 0) return [];
       var devide = parseFloat(pointssum / i);
+      console.log(devide);
       if(devide < 2){
           var color = 'green';
       }
