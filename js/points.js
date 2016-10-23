@@ -3,18 +3,20 @@ var NO_POINTS = '0';
 
 var cardBadge = function(t) {
   return t.get('card', 'shared', 'points').then(function(points) {
-    if (points && points != NO_POINTS) {
+      var pointssum = 0;
+    points.forEach(function(d, i){
+        console.log(d);
+        pointssum += d;
+    });
+
       return [{
         dynamic: function() {
           return {
-            text: points,
+            text: pointssum,
             icon: ICON
           }
         }
       }]
-    } else {
-      return [];
-    }
   });
 };
 
