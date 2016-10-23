@@ -7,7 +7,7 @@ var cardBadge = function(t) {
       return [{
         dynamic: function() {
           return {
-            text: points,
+            text: 11,
             icon: ICON
           }
         }
@@ -29,7 +29,7 @@ var cardButton = function(t) {
     return [
       {
         icon: ICON,
-        text: text,
+        text: 22,
         callback: cardButtonCallback
       }
     ];
