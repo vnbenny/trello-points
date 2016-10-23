@@ -19,7 +19,7 @@ var cardBadge = function(t) {
   });
 };
 
-var cardButton = function(t) {
+var cardButton = function(t, e) {
   return t.get('card', 'shared', 'points').then(function(points) {
     if (points && points != NO_POINTS) {
       var text = points + " points";
@@ -30,7 +30,7 @@ var cardButton = function(t) {
     return [
       {
         icon: ICON,
-        text: points,
+        text: e,
         callback: cardButtonCallback
       }
     ];
