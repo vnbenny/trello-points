@@ -11,9 +11,9 @@ var cardBadge = function(t) {
               i++;
           }
       }
-
+      var color = 'green';
       if(pointssum == 0) return [];
-      var devide = pointssum / i;
+      var devide = parseFloat(pointssum / i);
       if(devide < 2){
           var color = 'green';
       }
