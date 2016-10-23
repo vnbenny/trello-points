@@ -20,14 +20,14 @@ var cardBadge = function(t) {
 };
 
 var cardButton = function(t) {
-  return t.get('card', 'shared', 'points').then(function(points, e) {
+  return t.get('card', 'shared', 'points').then(function(points) {
     if (points && points != NO_POINTS) {
       var text = points + " points";
     } else {
       var text = "Points";
     }
-    console.log(t);
-    console.log(e);
+    console.log(t.args);
+    console.log(t.args.{0}.context.member);
     return [
       {
         icon: ICON,
