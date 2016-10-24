@@ -4,6 +4,7 @@ Card rating Power-Up for Trello
 
 - Press a button on a card to pick the rating of importance you think it needs
 - The rating appear on the cards and on the board, and on the button itself if the card is open
+- The rating of all memebers is summed and then devided by the number or raters, colors of green, yellow and red are displayed according the sum of the acumulated rating amount.
 
 
 ## Installation
