@@ -1,11 +1,11 @@
 {
-  "name": "Points",
+  "name": "Rating",
   "description": "",
-  "details": "Add points to cards!",
+  "details": "Add rating to a card!",
   "icon": {
     "url": "./images/logo.png"
   },
-  "author": "Kevin Bongart",
+  "author": "Ben Van Nimmen",
   "capabilities": [
     "callback",
     "card-badges",
