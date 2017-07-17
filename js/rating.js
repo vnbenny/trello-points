@@ -36,6 +36,7 @@ var cardBadge = function(t) {
 };
 
 var cardButton = function(t) {
+    console.log('cardButton');
      var member = t.args['0'].context.member;
   return t.get('card', 'shared', 'points').then(function(points) {
       if(points[member] == null ) var pointssum = 0;
@@ -52,6 +53,7 @@ var cardButton = function(t) {
 };
 
 var cardButtonCallback = function(t) {
+    console.log('cardButtonCallback');
   var points = [0, 1, 2, 3, 4, 5].map(function(point) {
     return {
       text: point+' points',
@@ -75,6 +77,7 @@ var cardButtonCallback = function(t) {
 };
 
 TrelloPowerUp.initialize({
+    console.log('initialize');
   'card-badges': function(t, options) {
     return cardBadge(t);
   },
